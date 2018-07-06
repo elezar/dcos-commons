@@ -1,7 +1,7 @@
 #!/bin/bash
 
 DATE_STAMP="$(date +%Y%m%d)"
-additional_tags=("${SOURCE_COMMIT}", "${DATE_STAMP}-${SOURCE_COMMIT}")
+additional_tags=("${SOURCE_COMMIT}" "${DATE_STAMP}-${SOURCE_COMMIT}")
 
 for tag in "${additional_tags[@]}"; do
     target="${DOCKER_REPO}:${tag}"

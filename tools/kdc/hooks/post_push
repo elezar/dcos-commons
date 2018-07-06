@@ -5,7 +5,7 @@ DATE_STAMP="$(date +%Y%m%d)"
 SOURCE_DIR="$(dirname ${DOCKERFILE_PATH})"
 CONTENT_SHA="$(tar --exclude=*.md -cvf - ${SOURCE_DIR} | sha1sum)"
 
-additional_tags=("${CONTENT_SHA}", "${DATE_STAMP}-${CONTENT_SHA}")
+additional_tags=("${CONTENT_SHA}" "${DATE_STAMP}-${CONTENT_SHA}")
 
 for tag in "${additional_tags[@]}"; do
     target="${DOCKER_REPO}:${tag}"
